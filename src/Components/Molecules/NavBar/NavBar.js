@@ -3,6 +3,7 @@ import styled from 'styled-components';
 import {Navbar} from 'react-bootstrap';
 
 const NavBar = () => {
+    const gitUrl = "https://github.com/hyginus255/react-recipe-app";
     return (
         <Nav>
             <Wrapper href="#">
@@ -12,7 +13,7 @@ const NavBar = () => {
             <Navbar.Toggle />
             <Navbar.Collapse className="justify-content-end">
                 <GitIcon>
-                    <a href="https://www.facebook.com"><i className="fab fa-github"></i></a>
+                    <a href={gitUrl}><i className="fab fa-github"></i></a>
                 </GitIcon>
             </Navbar.Collapse>
         </Nav>
