@@ -8,13 +8,35 @@ import Footer from "../Components/Molecules/Footer/Footer";
 
 
 class App extends Component {
+  state = {
+    recipes : [],
+    url : "https://www.food2fork.com/api/search?key=6986d75ddbdf856e3cb686faa1c96481&"
+  }
+
+  async getTopRecipes(){
+    try {
+      const data = await fetch(this.state.url);
+      const jsonData = await data.json();
+      this.setState({
+        recipes : jsonData.recipes
+      });
+    } catch (error) {
+      console.log("something went wrong");
+    }
+    
+  }
+
+  componentDidMount(){
+    this.getTopRecipes();
+  }
+
   render(){
     return(
       <React.Fragment>
         <GlobalStyles/>
         <NavBar />
         <SearchBar />
-        <RecipeBanner />
+        <RecipeBanner recipes = {this.state.recipes}/>
         <Footer/>
       </React.Fragment>
     )

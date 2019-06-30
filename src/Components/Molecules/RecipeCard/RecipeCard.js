@@ -4,16 +4,15 @@ import Image from '../../Atoms/Image/Image';
 import Button from '../../Atoms/Button/Button';
 import {Container, Row, Col} from 'react-bootstrap';
 
-const RecipeCard = () => {
-    let imgScr = "https://www.weightwatchers.com/us/sites/default/files/styles/wwvs_default_image/public/article_masthead/allaboutzeropointfoods_yk_ww_080218_0spvfoods_190_1250x600.jpg?itok=Fo_ThSVk";
+const RecipeCard = (props) => {
     return(
         <Wrapper fluid>
             <Row>
                 <Col>
-                    <Image src = {imgScr} alt="Recipe Image" />
+                    <Image src = {props.image} alt="Recipe Image" />
                     <Body>
-                            <Title>Jalapeno Popper Grilled Cheese Sandwich</Title>
-                            <Publisher>Closet Cooking</Publisher>
+                            <Title>{props.title}</Title>
+                            <Publisher>{props.publisher}</Publisher>
                     </Body>
                     <Footer fluid>
                         <Row>
