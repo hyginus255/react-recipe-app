@@ -19,8 +19,6 @@ const RecipeCard = (props) => {
                             <Col md={12}>
                                 <Link green href={props.data.source_url}>Details</Link>
                                 <Link href={props.data.source_url} target="_blank">Recipe Url</Link>
-                                {/* <a className="btn btn-primary"  href={props.data.source_url}>Details</a> */}
-                                {/* <a className="btn btn-success" target="_blank" rel="noopener noreferrer" href={props.data.source_url}>Vist Site</a> */}
                             </Col>
                         </Row>
                     </Footer>
@@ -35,7 +33,7 @@ export default RecipeCard;
 const Wrapper = styled(Container)`
     border: 1px solid #dbd9d9;
     padding:0;
-    margin : 0.5em;
+    margin : 0.5em 0em;
     :hover{
         box-shadow : 0em 0em 0.5em 0em #dbd9d9;
     }

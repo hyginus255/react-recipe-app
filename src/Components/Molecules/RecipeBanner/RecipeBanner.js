@@ -27,7 +27,7 @@ const RecipeBanner = (props) => {
 export default RecipeBanner;
 
 const Wrapper = styled.section`
-    padding : 1.5em 1.5em;
+    padding : 1.5em 0em;
     text-align: center;
     background-color:#fff;
 `;
