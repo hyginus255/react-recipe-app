@@ -1,4 +1,5 @@
 import React, {Component} from 'react';
+import recipes from '../tempData';
 
 import NavBar from '../Components/Molecules/NavBar/NavBar';
 import GlobalStyles from "../Components/Styles/_global_styles";
@@ -9,26 +10,26 @@ import Footer from "../Components/Molecules/Footer/Footer";
 
 class App extends Component {
   state = {
-    recipes : [],
+    recipes : recipes,
     url : "https://www.food2fork.com/api/search?key=6986d75ddbdf856e3cb686faa1c96481&"
   }
 
-  async getTopRecipes(){
-    try {
-      const data = await fetch(this.state.url);
-      const jsonData = await data.json();
-      this.setState({
-        recipes : jsonData.recipes
-      });
-    } catch (error) {
-      console.log("something went wrong");
-    }
+  // async getTopRecipes(){
+  //   try {
+  //     const data = await fetch(this.state.url);
+  //     const jsonData = await data.json();
+  //     this.setState({
+  //       recipes : jsonData.recipes
+  //     });
+  //   } catch (error) {
+  //     console.log("something went wrong");
+  //   }
     
-  }
+  // }
 
-  componentDidMount(){
-    this.getTopRecipes();
-  }
+  // componentDidMount(){
+  //   this.getTopRecipes();
+  // }
 
   render(){
     return(

@@ -1,19 +1,24 @@
 import React from 'react'
 import styled from 'styled-components'
 
-const Image = (props) => {  
+const Image = (props) => { 
+    let imgUrl = props.src;
+    const Element = styled.section`
+        width: 100%;
+        height:12em;
+        background-image: ${`url(${imgUrl})`};
+        background-size : cover;
+        background-repeact : no-repeat;
+        background-position : center;
+    `;
+
     return(
         <React.Fragment>
-            <Element src={props.src} alt={props.alt} />
+            <Element />
         </React.Fragment>
     );
 }
 
 export default Image;
-
-const Element = styled.img`
-    width: 100%;
-    height:auto;
-`;
 
 

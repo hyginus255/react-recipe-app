@@ -1,24 +1,26 @@
 import React from 'react';
 import styled from 'styled-components';
 import Image from '../../Atoms/Image/Image';
-import Button from '../../Atoms/Button/Button';
+import Link from '../../Atoms/Link/Link';
 import {Container, Row, Col} from 'react-bootstrap';
 
-const RecipeCard = (props) => {
+const RecipeCard = (props) => {    
     return(
         <Wrapper fluid>
             <Row>
                 <Col>
-                    <Image src = {props.image} alt="Recipe Image" />
+                    <Image src = {props.data.image_url}  />
                     <Body>
-                            <Title>{props.title}</Title>
-                            <Publisher>{props.publisher}</Publisher>
+                            <Title>{props.data.title}</Title>
+                            <Publisher>Published by {props.data.publisher}</Publisher>
                     </Body>
                     <Footer fluid>
                         <Row>
                             <Col md={12}>
-                                <Button green>Details</Button>
-                                <Button>Vist Site</Button>
+                                <Link green href={props.data.source_url}>Details</Link>
+                                <Link href={props.data.source_url} target="_blank">Recipe Url</Link>
+                                {/* <a className="btn btn-primary"  href={props.data.source_url}>Details</a> */}
+                                {/* <a className="btn btn-success" target="_blank" rel="noopener noreferrer" href={props.data.source_url}>Vist Site</a> */}
                             </Col>
                         </Row>
                     </Footer>

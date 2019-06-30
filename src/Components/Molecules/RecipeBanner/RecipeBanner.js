@@ -4,11 +4,12 @@ import RecipeCard from '../RecipeCard/RecipeCard';
 import {Container, Row, Col} from 'react-bootstrap';
 
 const RecipeBanner = (props) => {
-    console.log(props.recipes);
     let mappedRecipes = [];
-    mappedRecipes = props.recipes.map((recipe, key)=>{
+    mappedRecipes = props.recipes.map((recipe)=>{
         return (
-            <Col key={key} xs={12} md={12} lg={4} sm={12}><RecipeCard title={recipe.title} image={recipe.image_url} publisher ={recipe.publisher} /></Col>
+            <Col key={recipe.recipe_id} xs={12} md={12} lg={4} sm={12}>
+                <RecipeCard data = {recipe} />
+            </Col>
         )
     })
     return(
