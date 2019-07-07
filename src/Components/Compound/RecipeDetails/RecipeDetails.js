@@ -28,7 +28,6 @@ class RecipeDetails extends Component {
     }
 
     render(){
-        console.log(this.state.recipe);
          const {image_url, ingredients,publisher,publisher_url,source_url,title} = this.state.recipe;
          let ingredientData = [];
          if(ingredients){
