@@ -2,23 +2,27 @@ import React from 'react';
 import styled from 'styled-components';
 import Image from '../../Atoms/Image/Image';
 import Link from '../../Atoms/Link/Link';
+import Button from '../../Atoms/Button/Button'
 import {Container, Row, Col} from 'react-bootstrap';
 
-const RecipeCard = (props) => {    
+const Recipe = (props) => {    
+    const {data, detailHander} = props;
+    // console.log(detailHander);
     return(
         <Wrapper fluid>
             <Row>
                 <Col>
-                    <Image src = {props.data.image_url}  />
+                    <Image src = {data.image_url}  />
                     <Body>
-                            <Title>{props.data.title}</Title>
-                            <Publisher>Published by {props.data.publisher}</Publisher>
+                            <Title>{data.title}</Title>
+                            <Publisher>Published by {data.publisher}</Publisher>
                     </Body>
                     <Footer fluid>
                         <Row>
                             <Col md={12}>
-                                <Link green href={props.data.source_url}>Details</Link>
-                                <Link href={props.data.source_url} target="_blank">Recipe Url</Link>
+                                {/* <Link green href={data.source_url}></Link> */}
+                                <Button  onClick={()=>{detailHander(1,246454);}}  green>Details</Button>
+                                <Link href={data.source_url} target="_blank">Recipe Url</Link>
                             </Col>
                         </Row>
                     </Footer>
@@ -28,7 +32,7 @@ const RecipeCard = (props) => {
     )
 }
 
-export default RecipeCard;
+export default Recipe;
 
 const Wrapper = styled(Container)`
     border: 1px solid #dbd9d9;

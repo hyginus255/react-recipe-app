@@ -1,9 +1,9 @@
 import React from 'react';
 import styled from 'styled-components';
-import SearchInput from '../SearchInput/SearchInput';
+import SearchInput from '../../Molecules/SearchInput/SearchInput';
 import {Container, Row, Col} from 'react-bootstrap';
 
-const searchBanner = () => {
+const RecipeSearch = () => {
     return (
         <Wrapper fluid>
             <Row>
@@ -19,7 +19,7 @@ const searchBanner = () => {
     );
 }
    
-export default searchBanner;
+export default RecipeSearch;
 
 
 const Wrapper = styled(Container)`

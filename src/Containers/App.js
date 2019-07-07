@@ -3,15 +3,18 @@ import recipes from '../tempData';
 
 import NavBar from '../Components/Molecules/NavBar/NavBar';
 import GlobalStyles from "../Components/Styles/_global_styles";
-import SearchBar from "../Components/Molecules/SearchBanner/SearchBanner";
-import RecipeBanner from "../Components/Molecules/RecipeBanner/RecipeBanner";
+import SearchBar from "../Components/Compound/RecipeSearch/RecipeSearch";
+import RecipeList from "../Components/Compound/RecipeList/RecipeList";
 import Footer from "../Components/Molecules/Footer/Footer";
+import RecipeDetails from '../Components/Compound/RecipeDetails/RecipeDetails';
 
 
 class App extends Component {
   state = {
     recipes : recipes,
-    url : "https://www.food2fork.com/api/search?key=6986d75ddbdf856e3cb686faa1c96481&"
+    url : "https://www.food2fork.com/api/search?key=6986d75ddbdf856e3cb686faa1c96481&",
+    recipe_id : 35382,
+    index : 0,
   }
 
   // async getTopRecipes(){
@@ -31,13 +34,40 @@ class App extends Component {
   //   this.getTopRecipes();
   // }
 
+  renderPage = (index) => {
+    switch(index){
+      default:
+      case 1:
+        return(
+          <React.Fragment>
+            <SearchBar />
+            <RecipeList recipes = {this.state.recipes} detailHander = {this.renderDetailHandler}/>
+          </React.Fragment>
+        )
+      case 0 :
+        return(<RecipeDetails id={this.state.recipe_id} indexHandler={this.renderIndexHandler}> </RecipeDetails>)
+    }
+  }
+
+  renderIndexHandler = (index) => {
+    this.setState({
+      index: index
+    })
+  }
+
+  renderDetailHandler = (index,id) => {
+    this.setState({
+      index: index,
+      recipe_id : id
+    })
+  }
+
   render(){
     return(
       <React.Fragment>
         <GlobalStyles/>
         <NavBar />
-        <SearchBar />
-        <RecipeBanner recipes = {this.state.recipes}/>
+        {this.renderPage(this.state.index)}
         <Footer/>
       </React.Fragment>
     )

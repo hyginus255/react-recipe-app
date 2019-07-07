@@ -10,7 +10,7 @@ const Button = (props) => {
         border: ${`0.02em solid ${color}`};
         background-color: ${() => outline ? "#fff" : color};
         color: ${() => outline ? color : "#fff" };
-        padding: 0.4em 1.2em;
+        padding: 0.269em 1.2em;
         cursor:pointer;
         :hover{
             background-color: ${() => outline ? color : "#fff"};
