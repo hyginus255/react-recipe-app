@@ -8,7 +8,7 @@ class RecipeDetails extends Component {
         super(props);
         this.state = {
             recipe :{},
-            url : `https://www.food2fork.com/api/get?key=6986d75ddbdf856e3cb686faa1c96481&&rId=${this.props.id}`,
+            url : `https://www.food2fork.com/api/get?key=7ad5d20837888d331ed0c0d1e3f589f1&&rId=${this.props.id}`,
         }
     }
 
@@ -20,12 +20,11 @@ class RecipeDetails extends Component {
                 recipe :jsonData.recipe,
             })
         }catch(error){
-            console.log("Something went wrong getting component details");
+            console.log(error);
         }
     }
 
     render(){
-
         const {image_url, ingredients,publisher,publisher_url,source_url,title} = this.state.recipe;
         let ingredientData = [];
 
