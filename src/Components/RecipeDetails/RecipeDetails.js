@@ -8,7 +8,7 @@ class RecipeDetails extends Component {
         super(props);
         this.state = {
             recipe :{},
-            url : `https://www.food2fork.com/api/get?key=7ad5d20837888d331ed0c0d1e3f589f1&&rId=${this.props.id}`,
+            url : `https://www.food2fork.com/api/get?key=c840b3ccc49e0bdf6903a413f72fa38d&&rId=${this.props.id}`,
         }
     }
 
